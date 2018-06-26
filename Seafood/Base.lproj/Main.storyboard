@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WIq-3i-Lm5">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Seafood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdogicon" translatesAutoresizingMaskIntoConstraints="NO" id="nkC-6D-pQk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nkC-6D-pQk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sx3-sN-B7E"/>
+                            <constraint firstItem="nkC-6D-pQk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XJc-CN-Pml"/>
+                            <constraint firstAttribute="trailing" secondItem="nkC-6D-pQk" secondAttribute="trailing" id="hLo-PA-3Dh"/>
+                            <constraint firstItem="nkC-6D-pQk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wzA-jv-Sr6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bEo-bz-WWm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="JZJ-Sr-DPI">
+                            <connections>
+                                <action selector="cameraPressed:" destination="BYZ-38-t0r" id="ZgJ-BQ-cxG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="foodIMG" destination="nkC-6D-pQk" id="aoh-qI-7Se"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="-533"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ayI-FH-vGX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FH2-Hd-mdc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tqp-jI-Asl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xhH-AR-TRf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCf-KV-ODn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.8" y="-564.46776611694156"/>
+        </scene>
+        <!--IntroVC-->
+        <scene sceneID="Zcw-MA-clL">
+            <objects>
+                <viewController id="WIq-3i-Lm5" customClass="IntroVC" customModule="HotDogZ_" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BaA-yi-kE9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ou4-zZ-htx">
+                                <rect key="frame" x="70" y="88" width="185" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="DyR-oW-Zb4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdogicon" translatesAutoresizingMaskIntoConstraints="NO" id="Qdr-cd-CN8">
+                                <rect key="frame" x="40" y="160" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUw-8x-hh8">
+                                <rect key="frame" x="46" y="318" width="228" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="RBg-bd-cEw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                <state key="normal" title="HotDogZ!">
+                                    <color key="titleColor" red="1" green="0.64181087859999997" blue="0.39235678239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hotdogBtnPressed:" destination="WIq-3i-Lm5" eventType="touchUpInside" id="aKH-4z-ACR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qdr-cd-CN8" firstAttribute="top" secondItem="ou4-zZ-htx" secondAttribute="bottom" constant="30" id="3tv-8x-zK7"/>
+                            <constraint firstItem="Qdr-cd-CN8" firstAttribute="centerX" secondItem="SUw-8x-hh8" secondAttribute="centerX" id="IF5-Sw-AuP"/>
+                            <constraint firstItem="SUw-8x-hh8" firstAttribute="top" secondItem="Qdr-cd-CN8" secondAttribute="bottom" constant="30" id="Ola-pw-eeK"/>
+                            <constraint firstItem="ou4-zZ-htx" firstAttribute="leading" secondItem="F8i-S7-Jvg" secondAttribute="leading" constant="70" id="QdQ-b1-VND"/>
+                            <constraint firstItem="Qdr-cd-CN8" firstAttribute="leading" secondItem="F8i-S7-Jvg" secondAttribute="leading" constant="40" id="bbH-mZ-lAO"/>
+                            <constraint firstItem="F8i-S7-Jvg" firstAttribute="bottom" secondItem="SUw-8x-hh8" secondAttribute="bottom" constant="85" id="cnE-UP-Olr"/>
+                            <constraint firstItem="ou4-zZ-htx" firstAttribute="top" secondItem="F8i-S7-Jvg" secondAttribute="top" constant="68" id="ggQ-Db-YVK"/>
+                            <constraint firstItem="Qdr-cd-CN8" firstAttribute="centerX" secondItem="BaA-yi-kE9" secondAttribute="centerX" id="zCl-nV-8E7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F8i-S7-Jvg"/>
+                    </view>
+                    <connections>
+                        <segue destination="FH2-Hd-mdc" kind="show" identifier="PicSeqgue" id="RAO-TK-QiX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jS3-8j-8Ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272" y="274"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hotdogicon" width="225" height="225"/>
+    </resources>
+</document>
