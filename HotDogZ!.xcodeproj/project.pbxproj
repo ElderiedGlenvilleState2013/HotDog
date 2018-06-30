@@ -13,6 +13,8 @@
 		DA5419D520E044BC00A49B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5419D420E044BC00A49B74 /* Assets.xcassets */; };
 		DA5419D820E044BC00A49B74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5419D620E044BC00A49B74 /* LaunchScreen.storyboard */; };
 		DA5419E020E045B000A49B74 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA5419DF20E045B000A49B74 /* Inceptionv3.mlmodel */; };
+		DA9E07FD20E802C000D97F27 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E07FC20E802C000D97F27 /* DataService.swift */; };
+		DA9E080020E803A400D97F27 /* animalClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E07FF20E803A400D97F27 /* animalClasses.swift */; };
 		DAD1FB7220E1ECB3000310DC /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1FB7120E1ECB3000310DC /* IntroVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		DA5419D720E044BC00A49B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA5419D920E044BC00A49B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5419DF20E045B000A49B74 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		DA9E07FC20E802C000D97F27 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		DA9E07FF20E803A400D97F27 /* animalClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalClasses.swift; sourceTree = "<group>"; };
 		DAD1FB7120E1ECB3000310DC /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +62,8 @@
 		DA5419CC20E044B600A49B74 /* Seafood */ = {
 			isa = PBXGroup;
 			children = (
+				DA9E07FE20E8037200D97F27 /* Model */,
+				DA9E07FB20E8029C00D97F27 /* DataService */,
 				DA5419E220E04E7400A49B74 /* utilites */,
 				DA5419CD20E044B600A49B74 /* AppDelegate.swift */,
 				DA5419E120E04E6500A49B74 /* Controller */,
@@ -84,6 +90,22 @@
 				DA5419DF20E045B000A49B74 /* Inceptionv3.mlmodel */,
 			);
 			path = utilites;
+			sourceTree = "<group>";
+		};
+		DA9E07FB20E8029C00D97F27 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				DA9E07FC20E802C000D97F27 /* DataService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		DA9E07FE20E8037200D97F27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA9E07FF20E803A400D97F27 /* animalClasses.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +183,8 @@
 				DAD1FB7220E1ECB3000310DC /* IntroVC.swift in Sources */,
 				DA5419E020E045B000A49B74 /* Inceptionv3.mlmodel in Sources */,
 				DA5419CE20E044B600A49B74 /* AppDelegate.swift in Sources */,
+				DA9E080020E803A400D97F27 /* animalClasses.swift in Sources */,
+				DA9E07FD20E802C000D97F27 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
