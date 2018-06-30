@@ -10,14 +10,14 @@ import UIKit
 import CoreML
 import Vision
 import Social
-
+import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
-    
+    //var or constants
     let imagePicker = UIImagePickerController()
-    
+    var speechSynthesizer = AVSpeechSynthesizer()
     
     
     
@@ -54,25 +54,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
            
             if let firstResults = results.first {
                 if firstResults.identifier.contains("terrier") {
-                    self.navigationItem.title = "It's a Dog!"
+                    self.navigationItem.title = firstResults.identifier
+                    self.synthesizeSpeech(fromString: firstResults.identifier)
                     self.navigationController?.navigationBar.barTintColor = UIColor.green
                     self.navigationController?.navigationBar.isTranslucent = false
                 } else {
                     if let thirdResults = results.first {
-                        if thirdResults.identifier.contains("hamster") {
-                            self.navigationItem.title = "It's a Hamster!"
+                        if thirdResults.identifier.contains("shark") {
+                            self.navigationItem.title = thirdResults.identifier
+                            self.synthesizeSpeech(fromString: thirdResults.identifier)
                             self.navigationController?.navigationBar.barTintColor = UIColor.green
                             self.navigationController?.navigationBar.isTranslucent = false
                         } else {
                             if let fourthResults = results.first {
-                                if fourthResults.identifier.contains("rabbit") {
-                                    self.navigationItem.title = "it's a rabbit!"
+                                if fourthResults.identifier.contains("snake") {
+                                    self.navigationItem.title = fourthResults.identifier
+                                    self.synthesizeSpeech(fromString: fourthResults.identifier)
                                     self.navigationController?.navigationBar.barTintColor = UIColor.green
                                     self.navigationController?.navigationBar.isTranslucent = false
                                 } else {
-                                    self.navigationItem.title = "not an Aninmal"
+                                    if let fifthResults = results.first {
+                                    if fifthResults.identifier.contains("rabbit") {
+                                        self.navigationItem.title = fifthResults.identifier
+                                        self.synthesizeSpeech(fromString: fifthResults.identifier)
+                                        self.navigationController?.navigationBar.barTintColor = UIColor.green
+                                        self.navigationController?.navigationBar.isTranslucent = false
+                                    } else {
+                                        
+                                    
+                                    self.navigationItem.title = "not sure, Please try again"
+                                    self.synthesizeSpeech(fromString: "not sure, Please try again")
                                     self.navigationController?.navigationBar.barTintColor = UIColor.red
                                     self.navigationController?.navigationBar.isTranslucent = false
+                                   
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -98,7 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    @IBAction func shareBtnPressed(_ sender: UIButton) {
+    @IBAction func shareBtnPressed(_ sender: Any) {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
             let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             vc?.setInitialText("My food is \(navigationItem.title!)")
@@ -112,9 +128,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 
+    //speechavspeech
     
-    
-
+    func synthesizeSpeech(fromString string: String) {
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSynthesizer.speak(speechUtterance)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,9 +141,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+        speechSynthesizer.delegate = self
         
     }
 
+   
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -133,3 +156,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
 }
 
+//extension
+extension ViewController: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        //finish utter
+    }
+}
